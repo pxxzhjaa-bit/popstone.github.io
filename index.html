@@ -1,1 +1,353 @@
-popstone.github.iopopstone.github.iopopstone.github.io
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POPSTONE GAME TECHNOLOGY LIMITED - 领先的手游开发与发行商</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(46, 125, 50, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #2e7d32;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #4caf50, #2e7d32);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .logo-icon::before {
+            content: "🎮";
+            font-size: 24px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 100px;
+            padding: 60px 0;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(46, 125, 50, 0.05));
+            border-radius: 20px;
+            margin-bottom: 60px;
+            box-shadow: 0 8px 32px rgba(76, 175, 80, 0.1);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #4caf50;
+            margin-bottom: 30px;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about-section {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #2e7d32;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #4caf50, #2e7d32);
+            border-radius: 2px;
+        }
+
+        .about-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+            columns: 2;
+            column-gap: 40px;
+            column-rule: 1px solid #e0e0e0;
+        }
+
+        .games-section {
+            background: linear-gradient(135deg, #f8f9fa, #e8f5e8);
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin-bottom: 60px;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .game-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(76, 175, 80, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(76, 175, 80, 0.2);
+        }
+
+        .game-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .game-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #2e7d32, #1b5e20);
+            color: white;
+            padding: 50px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .contact-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #a5d6a7;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .contact-icon {
+            margin-right: 15px;
+            font-size: 1.2rem;
+            color: #81c784;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            color: #a5d6a7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .about-content {
+                columns: 1;
+            }
+            
+            .header-content {
+                justify-content: center;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-section, .about-section, .games-section {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon"></div>
+                    <div class="logo-text">PopStone</div>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="hero-section">
+                <h1 class="hero-title">POPSTONE</h1>
+                <p class="hero-subtitle">GAME TECHNOLOGY LIMITED</p>
+                <p class="hero-description">领先的手游开发与发行商，致力于为全球用户提供优质的移动游戏体验</p>
+            </section>
+
+            <section class="about-section">
+                <h2 class="section-title">关于我们</h2>
+                <div class="about-content">
+                    <p>POPSTONE GAME TECHNOLOGY LIMITED是国内领先的手游开发和发行商，成立于2023年底，主营智能手机游戏开发和发行，为手机用户提供优质手机游戏。</p>
+                    
+                    <p>我们拥有经验丰富和技术领先的研发团队，核心团队均来自业界知名企业，超过8年的游戏开发和运营经验。经过数月的历练和蜕变，我们已经拥有了国内最专业的移动游戏运营团队和最庞大的移动游戏用户群体。</p>
+                    
+                    <p>创办以来，POPSTONE以其敏锐的市场嗅觉、丰富的游戏资源以及独到的行业见解始终走在行业前沿。我们始终坚持"用户至上"的服务理念，提供专业深度的游戏运营服务，深受玩家和行业人士好评。</p>
+                    
+                    <p>目前我们不仅掌握了国内最具竞争力的用户流量渠道，还与几乎所有厂商形成了良好的合作关系，旨在用最完美的服务与国内外优秀的手机游戏开发商共赢手机游戏市场！</p>
+                    
+                    <p>未来，POPSTONE致力于手机轻游戏的研发和发行，持续研发出精品手游，引进发行全球知名精品游戏，全力打造中国轻游戏研发和发行的知名品牌。</p>
+                </div>
+            </section>
+
+            <section class="games-section">
+                <h2 class="section-title">热门游戏</h2>
+                <div class="games-grid">
+                    <div class="game-card">
+                        <div class="game-icon">🎯</div>
+                        <div class="game-name">Bubble Shooter</div>
+                    </div>
+                    <div class="game-card">
+                        <div class="game-icon">🐉</div>
+                        <div class="game-name">泡泡龙传说</div>
+                    </div>
+                    <div class="game-card">
+                        <div class="game-icon">🔫</div>
+                        <div class="game-name">射击2024</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="contact-section">
+                    <h3>联系我们</h3>
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1170757c787f51617e6162657e7f743f62786574">[email&#160;protected]</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span>ROOM 1702, 17/F, HONG KONG TRADE CENTRE<br>
+                              NOS. 161-167 DES VOEUX ROAD CENTRAL HK</span>
+                    </div>
+                </div>
+                <div class="contact-section">
+                    <h3>我们的使命</h3>
+                    <p>致力于为全球用户提供最优质的移动游戏体验，打造中国轻游戏研发和发行的知名品牌。</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 POPSTONE GAME TECHNOLOGY LIMITED. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>
